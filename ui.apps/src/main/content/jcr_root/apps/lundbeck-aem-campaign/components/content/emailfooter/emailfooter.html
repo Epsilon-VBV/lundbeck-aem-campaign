@@ -1,0 +1,32 @@
+<p data-sly-test="${wcmmode.edit || wcmmode.design}">Configure footer Component</p>
+<sly class="" data-sly-test="${properties.linkItems || properties.footerDisclaimer}">
+   <sly data-sly-use.multiItems="com.lundbeck.vyepti.core.models.FooterLinkModel">
+      <tr>
+         <td colspan="2" style="width:100%; padding-top:25px;padding-bottom:5px;padding-left:20px;padding-right:20px;text-align:center;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#757575;">
+            ${properties.footerDisclaimer @context='html'}
+         </td>
+      </tr>
+      <!-- FOOTER LOGO-->
+      <tr>
+         <td colspan="2" style="padding-top:20px;padding-bottom:20px;width:100%;text-align:center;">
+            <a href="${properties.logoURL}" target="_blank">
+               <img width="170" height="85" border="0" src="${properties.logoDeskImg}" alt="${properties.logoAltText}" />
+            </a>
+         </td>
+      </tr>
+      <!-- FOOTER BOTTOM-->
+      <tr>
+         <td colspan="2">
+            <table class="outer" align="center" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0; border-collapse:collapse; border-width:0;border-spacing:0;margin:0 auto;width:100%;max-width:600px;">
+               <tr style="width:100%; background-color:#41748d;text-align:center;" data-sly-list.footeritems="${multiItems.footerlinks.listChildren}">
+                  <td style="padding-top:20px;padding-bottom:20px;">
+                     <a href="${footeritems.linkURL}" target="_blank" style="text-decoration:none;color:#ffffff;font-weight:bold;font-family:Arial, Helvetica, sans-serif;font-size:14px;">
+                        ${footeritems.linkTitle}
+                     </a>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+   </sly>
+</sly>

@@ -1,0 +1,26 @@
+<p data-sly-test="${wcmmode.edit || wcmmode.design}">Configure ISI Component</p>
+<sly data-sly-use.model="com.lundbeck.campaign.models.PatientRTETranslator"/>
+<tr>
+   <td colspan="2" style="width:100%; padding-top:5px;padding-bottom:5px;padding-left:0;padding-right:0;text-align:left;background-color:#FFFFFF;">
+      <table class="outer" align="center" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;border-collapse:collapse;border-width:0;border-spacing:0;margin:0;width:100%;">
+         <tr style="width:100%; text-align:left;">
+            <td style="padding-top:10px;padding-bottom:10px; padding-right:22px;padding-left:22px; text-transform:uppercase;font-family:Arial, Helvetica, sans-serif;color:#484848; font-size:18px; font-weight:600">
+               ${properties.isiTitle}
+            </td>
+         </tr>
+         ${model.isiDescription @ context='unsafe'}
+      </table>
+   </td>
+</tr>
+<tr>
+   <td colspan="2" style="width:100%; padding-top:5px;padding-bottom:5px;padding-left:0;padding-right:0;text-align:left;background-color:#FFFFFF;">
+      <table class="outer" align="center" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;border-collapse:collapse;border-width:0;border-spacing:0;margin:0;width:100%;">
+         <tr style="width:100%; text-align:left;">
+            <td style="padding-top:10px;padding-bottom:10px; padding-right:22px;padding-left:22px; text-transform:uppercase;font-family:Arial, Helvetica, sans-serif;color:#484848; font-size:18px; font-weight:600">
+               ${properties.approvedTitle}
+            </td>
+         </tr>
+         ${model.approvedDesc @ context='unsafe'}
+      </table>
+   </td>
+</tr>
