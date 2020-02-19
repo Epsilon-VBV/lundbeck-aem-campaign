@@ -1,0 +1,93 @@
+<head data-sly-use.head="head.js"
+      data-sly-use.wcmInit="initwcm.js"
+      data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}"
+      data-sly-use.body="body.js">
+    <sly data-sly-test="${properties.personalizedview}">${properties.personalizedview  @ context='unsafe'}</sly>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>${head.title}</title>
+    <link rel="canonical" href="${head.pagePath}" />
+    <link data-sly-test="${head.faviconPath}" rel="shortcut icon" href="${head.faviconPath}" />
+    <meta data-sly-test="${head.description}" name="description" content="${head.description}" />
+    <meta name="x-apple-disable-message-reformatting">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta data-sly-test="${head.keywords}" name="keywords" content="${head.keywords}"/>
+
+    <!--/* Outputs the WCM initialization code. If WCM mode is disabled nothing is rendered */-->
+
+    <!--/* include client libs */-->
+    <meta data-sly-test="${!head.wcmmode.disabled && wcmInit.isTouchAuthoring}" data-sly-call="${clientLib.all @ categories='jquery,cq.authoring.page,cq.shared'}" data-sly-unwrap></meta>
+    <meta data-sly-test="${!head.wcmmode.disabled && !wcmInit.isTouchAuthoring}" data-sly-call="${clientLib.all @ categories='cq.wcm.edit,mcm.campaign.ui.classic,cq.mcm,cq.mcm.newsletter.emulator,cq.personalization,cq.mcm.newsletter.hook,cq.dam.scene7,mcm.campaign.s7-image'}" data-sly-unwrap></meta>
+    <meta data-sly-test="${!head.wcmmode.disabled && !wcmInit.isTouchAuthoring}" data-sly-resource="${resource.path @ resourceType='mcm/components/newsletter/emailclient/base', selectors='init'}" data-sly-unwrap></meta>
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            -webkit-text-size-adjust: none;
+            -ms-text-size-adjust: none;
+            font-family: Arial, Helvetica, sans-serif!important;
+            margin: 0!important;
+            padding: 0!important;
+            background-color: #ffffff;
+            color: #757575;
+            width: 100%;
+            min-width: 100% !important;
+        }
+
+        table {
+            border-spacing: 0;
+        }
+
+        table td {
+            border-collapse: collapse;
+        }
+
+        img {
+            margin: 0 !important;
+            border: 0 !important;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        /*Windows 10 email link fix*/
+
+        a:link,
+        span.MsoHyperlink {
+            mso-style-priority: 99;
+            text-decoration: underline;
+        }
+        sup{
+            position:relative;
+        }
+
+        /* iOS BLUE LINKS */
+
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+        @media screen and (max-width: 420px) {
+            u~div .wrapper {
+                min-width: 100vw !important;
+            }
+            div>u~div .wrapper {
+                min-width: 100% !important;
+            }
+        }
+    </style>
+
+</head>

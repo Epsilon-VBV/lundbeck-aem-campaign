@@ -1,0 +1,40 @@
+<p data-sly-test="${wcmmode.edit || wcmmode.design}">Configure Thank You Component</p>
+<sly data-sly-use.model="com.lundbeck.campaign.models.PatientRTETranslator"/>
+<sly data-sly-test="${properties.heading}">
+   <tr>
+      <td colspan="2" style="width:100%; padding-top:5px;padding-bottom:5px;padding-left:0;padding-right:0;text-align:center; background-image: url('${properties.bannerImage @ context='uri'}'); background-repeat: no-repeat; background-position: top right; background-size: 158px;">
+         <table class="outer" align="center" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;border-collapse:collapse;border-width:0;border-spacing:0;margin:0;width:100%;">
+            <tr style="width:100%; text-align:left;">
+                ${model.heading @context='unsafe'}
+            </tr>
+            <tr style="width:100%; text-align:left;">
+               <td style="padding-top:20px;padding-bottom:20px; padding-left:22px; padding-right:22px; font-family:Arial, Helvetica, sans-serif;background-color:#E1ECF1; font-size:24px; font-weight:600; color:#c02c57; background-image: url('${properties.stripBannerImage @ context='uri'}'); background-repeat: no-repeat; background-position: bottom right; background-size: 65px;">
+                  ${properties.subHeading @context='html'}
+               </td>
+            </tr>
+            <tr style="width:100%; text-align:center;">
+               <td>
+                  <table class="outer" align="center" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;border-collapse:collapse;border-width:0;border-spacing:0;margin:0;width:100%;">
+                     <tr style="width:100%; text-align:left;">
+                        <td style="padding-top:20px;padding-bottom:20px;padding-left:22px;padding-right:10px; text-align:left;">
+                           <a href="#">
+                              <img width="150" height="150" border="0" border="0" src="${properties.threeMonthsImg}" alt="Every 3 Months" />
+                           </a>
+                        </td>
+                       ${model.threeMonthsDesc @context='unsafe'}
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+            <tr style="width:100%; text-align:left;">
+               <td style="padding-top:5px;padding-bottom:5px; padding-right:22px;padding-left:22px;font-family:Arial, Helvetica, sans-serif;color:#484848; font-size:14px; line-height: 1.4; font-weight:400">
+                  ${properties.disclaimer}
+               </td>
+            </tr>
+            <tr style="width:100%; text-align:left;">
+                  ${model.stayTunedDesc @context='unsafe'}
+            </tr>
+         </table>
+      </td>
+   </tr>
+</sly>
